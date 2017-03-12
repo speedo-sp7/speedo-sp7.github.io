@@ -2,16 +2,16 @@
   href: "/"
 
 - title: "O mne"
-  href: "/aboutme/aboutme.html"
+  href: "aboutme/aboutme.html"
 
 - title: "Blog"
-  href: "/blog/"
+  href: "blog/"
 
 - title: "Portfólio"
-  href: "/portfolio/"
+  href: "portfolio/"
 
 - title: "Kontakt"
-  href: "/contact/contact.html"
+  href: "contact/contact.html"
 
 - title: "Github"
   external: "https://github.com/speedo-sp7/"
