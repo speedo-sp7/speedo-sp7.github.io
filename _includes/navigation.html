@@ -1,0 +1,15 @@
+<nav class="navbar" style="z-index:99;">
+  <nav class="row">
+      <div id="nav">
+            <ul class="primary-nav">
+              {% for nav in site.data.navigation %}
+                  {% if nav.href %}
+                      <li><a href="{{ site.github_url }}{{ nav.href }}">{{ nav.title | upcase }}</a></li>
+                  {% elsif nav.external %}
+                      <li><a href="{{ nav.external }}">{{ nav.title | upcase }}</a></li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+      </div>
+  </nav>
+</nav>

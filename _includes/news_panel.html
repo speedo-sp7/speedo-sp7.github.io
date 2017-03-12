@@ -1,0 +1,38 @@
+<div class="row">
+  <hr>
+      <div class="col-sm-4">
+        <h3 style="text-align:center;">O tejto stránke</h3>
+        <p style="text-align:center;">
+          Táto webová stránka je určená
+          na moju osobnú prezentáciu.
+          Nájdete tu moje nápady a myšlienky,
+          zaujímavé informácie z môjho života,
+          ale aj projekty, ktorým sa venujem.</p>
+
+        <p style="text-align:center;">Chceš sa o mne dezvedieť viac? Tak pokračuj <a href="./aboutme/aboutme.html">TU ></a></p>
+      </div>
+      <div class="col-sm-4">
+        <h3 style="text-align:center;">Posledné blogové príspevky</h3>
+        <ul style="margin-left:0; padding-left:0">
+          {% for post in site.posts limit:6 site.recent_posts %}
+            <li style="list-style-type: none; text-align:center">
+              <a href="{{ site.github.url }}{{ post.url }}">
+                  {{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <h3 style="text-align:center;">Posledné pridané projekty</h3>
+        <ul style="margin-left:0; padding-left:0">
+          {% for project in site.portfolio limit:6 site.recent_projects %}
+            <li style="list-style-type: none; text-align:center">
+              <a href="{{ site.github.url }}{{ project.url }}">
+                  [{{ project.tag | upcase }}] {{ project.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+</div>
+
+<div class="row"><hr></div>

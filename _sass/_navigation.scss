@@ -1,0 +1,58 @@
+//Reset
+#nav, #nav ul {
+	list-style: none;
+	margin: auto;
+}
+
+// Navbar wrap
+.navbar {
+  height: $navbar-height;
+  background-color: $navbar-color;
+
+	position: fixed;;
+	width: 100%;
+	top: 0;
+	text-align:center;
+}
+
+// Main navigation bar
+#nav .primary-nav{
+	z-index: 10;
+}
+
+#nav .primary-nav>li {
+	display: inline-block;
+	position: relative;
+}
+
+// Main navigation links
+#nav>.primary-nav>li>a {
+	/* Layout */
+	line-height: $navbar-height;
+	display: inline-block;
+	padding: 0 35px;
+
+	/* Typography */
+	font-family: $navbar-font-family;
+	font-size: $navbar-font-size;
+	font-weight: 700;
+	color: $secondary-color;
+
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+// Hover state of the links
+#nav>.primary-nav>li:hover>a {
+	background-color: $navbar-hover-color;
+}
+
+// Active state of the links
+#nav>.primary-nav>li:active>a {
+	background-color: $navbar-active-color;
+}
+
+// Change color on hover
+#nav .primary-nav ul li:hover>a {
+	background-color: $navbar-hover-color;
+}

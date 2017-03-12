@@ -1,0 +1,13 @@
+<article class="row">
+      <section class="small-12 large-12 columns page-content">
+            <h2>Posledné príspevky</h2>
+            <ul>
+              {% for post in site.posts limit:5 %}
+                <li>
+                  <a href="{{ site.github.url }}{{ post.url }}">
+                      {{ post.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+      </section>
+</article>

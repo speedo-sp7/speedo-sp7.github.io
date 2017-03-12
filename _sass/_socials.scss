@@ -1,0 +1,27 @@
+//Reset
+#soc, #soc ul {
+	position: relative;
+}
+// Socbar wrap
+.socbar {
+  height: $socbar-height;
+  background-color: $socbar-color;
+
+	width: 100%;
+	text-align:center;
+}
+
+// Soc navigation soc
+#soc .primary-soc>li {
+	display: inline-block;
+	position: relative;
+}
+
+// Soc navigation links
+#soc>.primary-soc>li>a {
+	/* Layout */
+	line-height: $socbar-height;
+	text-align:center;
+	display: inline-block;
+	padding: 0 45px;
+}

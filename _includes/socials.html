@@ -1,0 +1,12 @@
+<div class="socbar">
+    <div class="row">
+        <div id="soc">
+                <ul class="primary-soc">
+                  <font color="white" size="3" width="10"> NÁJDEŠ MA AJ NA: </font>
+                  {% for socials in site.data.socials %}
+                      <li><a href="{{ socials.href }}"><span class="icon-{{ socials.title }} socials"></span></a></li>
+                  {% endfor %}
+                </ul>
+        </div>
+    </div>
+</div>

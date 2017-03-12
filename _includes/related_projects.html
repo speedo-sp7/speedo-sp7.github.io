@@ -1,0 +1,17 @@
+<div class="row">
+      <section class="small-12 large-12 columns page-content">
+            <h2>Podobné projekty</h2>
+            <div class="project-list">
+            <ul>
+              {% for project in site.portfolio %}
+                {% if project.tag == page.tag and project.url != page.url %}
+                  <li>
+                    <a href="{{ site.github.url }}{{ project.url }}">
+                      {{ project.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            <div>
+      </section>
+</div>

@@ -1,0 +1,28 @@
+---
+layout: page
+---
+
+<div class="project">
+    <header class="project-header">
+      <p class="project-meta">Tento projekt bol uverejnený dňa:
+        {{ page.date | date: "%-d. %b %Y" }}
+      </p>
+    </header>
+
+    <div class="project-content">
+      {{ content }}
+
+      {% if page.project_url %}
+      <p>
+        <h3 style="margin-bottom:-60px"> Tento projekt je možné si stiahnuť <a href="{{page.project_url}}">TU</a><url>.<h3>
+      </p>
+      {% endif %}
+    </div>
+    <hr align="left" width="50%"/>
+
+    <div class="container" style="padding-left:30px">
+      {% if page.show_related_projects %}
+        {% include related_projects.html %}
+      {% endif %}
+    </div>
+</div>

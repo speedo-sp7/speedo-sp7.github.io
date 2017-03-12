@@ -1,4 +1,38 @@
-name: Hank Quinlan, Horrible Cop
-markdown: kramdown
+# Site settings
+name: Osobná webstránka - Stanislav Vnenčák
+email: svnencak@gmail.com
+tel: +421 917 523 738
+author: Stanislav Vnenčák
+author_desc: FIIT STU - študent
+profile_image: /images/profile_image.jpg
 
-permalink: /blog/:year/:month/:day/:title
+keywords: stanislav, vnencak, blog, portfolio
+description: Moja osobná webová stránka.
+
+#github_url: "https://speedo-sp7.github.io/"
+
+# Build settings
+markdown: kramdown
+kramdown:
+input: GFM
+
+destination: _site
+
+# Exclude our ruby stuff
+exclude: [.bundle, bin, vendor, .last_optimized]
+
+gems:
+  - image_optim
+  - jemoji
+  - jekyll-sitemap
+
+feed:
+  path: atom.xml
+
+permalink: /blog/:year/:title
+
+# Collections
+collections:
+  portfolio:
+    title: Projects
+    output: true

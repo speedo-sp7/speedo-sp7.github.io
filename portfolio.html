@@ -1,0 +1,32 @@
+---
+layout: page
+title: Portfólio
+description: Ak Ťa zaujímajú projekty, na ktorých som sa podieľal, nájdeš ich všetky tu usporiadnaé do jednotlivých kategórií.
+permalink: /portfolio/
+---
+
+<ul class="project-list">
+  {% for category in site.data.portfolio_categories %}
+    <h2>{{category.title}}</h2>
+
+    {% if category.description %}
+      <h4><i><q> {{category.description}} </q></i></h4>
+    {% endif %}
+
+    <ul style="list-style-type:disc">
+        {% for project in site.portfolio %}
+            {% if project.category == category.title or project.tag == category.tag %}
+              <li>
+                <h3>
+                  <a class="project-link" href="{{ project.url }}">
+                    {{ project.title }}
+                  </a>
+                </h3>
+              </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+  </br>
+
+  {% endfor %}
+</ul>
