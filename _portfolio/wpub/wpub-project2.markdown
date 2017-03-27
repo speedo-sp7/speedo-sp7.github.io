@@ -4,6 +4,8 @@ title: Projekt 2 - Transformácia vybraného dokumentu do formátu DocBook
 category: "Webové publikovanie"
 tag: wpub
 
+date: 2017-27-03T23:31:44-08:00
+
 project_url: https://github.com/speedo-sp7/speedo-sp7.github.io/tree/master/uploadedFiles/wpub_zadanie2.zip
 
 show_related_projects: yes
