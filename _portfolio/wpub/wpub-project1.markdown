@@ -4,8 +4,6 @@ title: Projekt 1 - Stránka v Yekyll
 category: "Webové publikovanie"
 tag: wpub
 
-date: 2017-13-03T18:01:14-08:00
-
 project_url: https://github.com/speedo-sp7/speedo-sp7.github.io
 
 show_related_projects: yes
