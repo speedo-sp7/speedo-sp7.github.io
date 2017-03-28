@@ -6,7 +6,7 @@ date: 2017-03-27 11:23:12 -08:00
 category: "Webové publikovanie"
 tag: wpub
 
-project_url: https://github.com/speedo-sp7/speedo-sp7.github.io/tree/master/uploadedFiles/wpub_zadanie2.zip
+project_url: https://github.com/speedo-sp7/speedo-sp7.github.io/blob/master/uploadedFiles/Z2-xvnencak.zip
 
 show_related_projects: yes
 ---
