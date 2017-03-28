@@ -1,6 +1,8 @@
 ---
 layout: project
 title: Projekt 2 - Transformácia vybraného dokumentu do formátu DocBook
+date: 2017-28-03T21:23:12-08:00
+
 category: "Webové publikovanie"
 tag: wpub
 
