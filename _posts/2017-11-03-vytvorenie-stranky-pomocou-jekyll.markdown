@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Zrod mojej stránky za pomoci nástroja Jekyll"
-date: 2017-11-03T19:34:33-08:00
+date: 2017-11-03 19:34:33 -08:00
 ---
 
 > Toto je môj prvý blogový príspevok na stránke vytvorenej pomocou statického generátora jekyll.
