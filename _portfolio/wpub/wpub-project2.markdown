@@ -107,7 +107,7 @@ Zmena v pomenovaní kapitol (kapitálkami)
 </xsl:attribute-set>
 ```
 
-###Zmena horizontálneho odsadenia blokov
+### Zmena horizontálneho odsadenia blokov
 Nastavenie odsadení
 ```
 </fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="3pt" space-after="5cm" text-align="center" font-size="12pt" font-family="sans-serif">
@@ -115,7 +115,7 @@ Nastavenie odsadení
 </fo:block>
 ```
 
-###Formátovanie textu
+### Formátovanie textu
 Nastavenie riadkovania
 ```
 <xsl:attribute-set name="normal.para.spacing">
@@ -131,7 +131,7 @@ Zmena typu písma
 <xsl:param name="symbol.font.family" select="'Symbol,ZapfDingbats,LucidaUnicode'"/>
 ```
 
-###Odsadenie textu
+### Odsadenie textu
 Odsadenie odstavcov
 ```
 <xsl:attribute name="text-indent">1.5em</xsl:attribute>
@@ -144,7 +144,7 @@ Zadefinovanie elementu medzery
 </xsl:template>
 ```
 
-###Zoznamy
+### Zoznamy
 Zmena odsadenia
 ```
 <xsl:attribute-set name="list.block.spacing">
@@ -152,7 +152,7 @@ Zmena odsadenia
 </xsl:attribute-set>
 ```
 
-###Odstavce
+### Odstavce
 Nastavenie rovnakého odsadenia pre všetky odstavce
 ```
 <xsl:attribute-set name="normal.para.spacing">
@@ -163,7 +163,7 @@ Nastavenie rovnakého odsadenia pre všetky odstavce
 </xsl:attribute-set>
 ```
 
-###Vlastné elementy
+### Vlastné elementy
 Zadefinovanie elementu mypara (para bez odsadenia)
 ```
 <xsl:template match="mypara">   
@@ -173,7 +173,7 @@ Zadefinovanie elementu mypara (para bez odsadenia)
 </xsl:template>
 ```
 
-###Referencie
+### Referencie
 Zmena štýlu referencií (kapitola, tabuľka, obrázok, podkapitola)
 ```
 <xsl:param name="local.l10n.xml" select="document('')"/>
@@ -189,7 +189,7 @@ Zmena štýlu referencií (kapitola, tabuľka, obrázok, podkapitola)
 </l:i18n>
 ```
 
-##Spôsob prekladu
+## Spôsob prekladu
 
 Pre vygenerovanie PDF je potrebný procesor formátovacích objektov XEP.
 
