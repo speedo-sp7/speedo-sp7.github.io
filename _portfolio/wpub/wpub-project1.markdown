@@ -6,7 +6,7 @@ date: 2017-03-13 20:04:18 -08:00
 category: "Webové publikovanie"
 tag: wpub
 
-project_url: https://github.com/speedo-sp7/speedo-sp7.github.io
+project_url: https://github.com/speedo-sp7/speedo-sp7.github.io/blob/master/uploadedFiles/Z1-xvnencak.zip
 
 show_related_projects: yes
 ---
