@@ -21,7 +21,7 @@ Požadované a kontrolné konštrukcie sú:
 
 * Štandardné členenie textu na kapitola, podkapitola, podpodkapitola, príloha, generovaný obsah
 * Zvýraznenie slov, zvýraznenie členenia textu odrážkami alebo číslovaním
-* Odkazy na iné časti vlastného dokumentu, prípadne odkazy na URL 
+* Odkazy na iné časti vlastného dokumentu, prípadne odkazy na URL
 * Poznámka pod čiarou
 * Zoznam použitej literatúry a zdrojov vrátane ich citácie v texte
 * Vloženie obrázku a tabuliek, odkazy na ne v texte; zoznam obrázkov a tabuliek v úvode alebo závere textu
@@ -33,3 +33,158 @@ Súčasťou požiadaviek na zadanie je vytvorenie správy o zadaní 2, ktorá bu
 
 Pre splnenie zadania sme sa rozhodli pretvoriť našu bakalársku prácu na FIIT STU do DocBooku.
 
+##Použité elementy
+
+Zoznam a popis elementov použitých v práci:
+* <bookinfo> - zadefinovanie základných informácií o práci
+* <abstract> - súčasť informácií o práci, anotácia, čestné prehlásenie, poďakovanie
+* <mypara> - vytvorený vlastný typ paragrafu bez odsadenia
+* <para> - paragraf s odsadením
+* <gap> - element na pridanie prázdneho riadku
+* <chapter> - kapitola
+* <sect1> - podkapitola
+* <sect2> - podpodkapitola
+* <sect3> - podpodpodkapitola
+* <orderedlist> - čislovaný zoznam
+* <itemizedlist> - zoznam
+* <figure> - obrázok, rovnica
+* <table> -tabuľka
+* <indexterm> - slovo z registra
+* <bibliography> - bibliografia
+* <index> - register pojmov
+* <appendix> - príloha
+
+##Vykonané zmeny
+###Zmena úvodnej stránky dokumentu
+```
+<!-- zmena title prace -->
+<xsl:template name="book.titlepage.before.recto">
+<fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" text-align="center" font-size="18pt" border-bottom-width="0.5pt" border-bottom-style="solid" font-family="sans-serif" text-transform="uppercase">
+
+<!-- zmena veduceho prace -->
+Vedúci bakalárskej práce:
+<xsl:value-of select="/book/bookinfo/othername[@role='veduci']"/>
+
+<!-- zmena v zalamovani textu -->
+<xsl:template name="book.titlepage.before.recto"><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" text-align="center" font-size="25pt" border-bottom-width="0.5pt" border-bottom-style="solid" font-family="sans-serif" text-transform="uppercase" hyphenate="false">
+      <xsl:value-of select="/book/bookinfo//affiliation/orgname"/>
+    </fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="6pt" text-align="center" font-size="14pt" font-family="sans-serif">
+      <xsl:value-of select="/book/bookinfo//affiliation/orgdiv[@role='fakulta']"/>
+    </fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="3pt" text-align="center" font-size="12pt" font-family="sans-serif">
+      <xsl:value-of select="/book/bookinfo//affiliation/orgdiv[@role='katedra']"/>
+    </fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="12pt" space-after="1cm" text-align="center">
+      <fo:external-graphic src="url(kizi.pdf)" width="2cm" content-width="scale-to-fit"/>
+    </fo:block>
+</xsl:template>
+```
+
+###Kapitoly
+```
+<!-- zmena v pomenovani kapitol -->
+<xsl:attribute-set name="chap.label.properties.common">
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 2"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
+  <xsl:attribute name="hyphenate">false</xsl:attribute>
+  <xsl:attribute name="margin-top">2em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">1.5em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">1.2em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">1.8em</xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="chap.label.properties" use-attribute-sets="chap.label.properties.common">
+  <xsl:attribute name="text-transform">capitalize</xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="chap.title.properties" use-attribute-sets="chap.label.properties.common">
+  <xsl:attribute name="margin-top">0.5em</xsl:attribute>
+</xsl:attribute-set>
+```
+
+###Zmena horizontálneho odsadenia blokov
+```
+</fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="3pt" space-after="5cm" text-align="center" font-size="12pt" font-family="sans-serif">
+      <xsl:value-of select="/book/bookinfo//affiliation/orgdiv[@role='katedra']"/>
+</fo:block>
+```
+
+###Formátovanie textu
+```
+<!-- nastaveie riadkovania -->
+<xsl:attribute-set name="normal.para.spacing">
+  <xsl:attribute name="line-height">1.5em</xsl:attribute>
+</xsl:attribute-set>
+
+<!-- zmena typu pisma -->
+<xsl:param name="body.font.family" select="'Times New Roman'"/>
+<xsl:param name="title.font.family" select="'Times New Roman'"/>
+<xsl:param name="monospace.font.family" select="'monospace'"/>
+<xsl:param name="symbol.font.family" select="'Symbol,ZapfDingbats,LucidaUnicode'"/>
+```
+
+###Odsadenie textu
+```
+<!-- odsadenie odstavcov -->
+<xsl:attribute name="text-indent">1.5em</xsl:attribute>
+
+<!-- zadefinovanie medzery -->
+<xsl:template match="gap">
+  <fo:block space-after="1em"></fo:block>
+</xsl:template>
+```
+
+###Zoznamy
+```
+<!-- zmena odsadenia -->
+<xsl:attribute-set name="list.block.spacing">
+  <xsl:attribute name="margin-left">15pt</xsl:attribute>
+</xsl:attribute-set>
+```
+
+###Odstavce
+```
+<!-- nastavenie rovnakeho odsadenia pre vsetky odstavce -->
+<xsl:attribute-set name="normal.para.spacing">
+  <xsl:attribute name="text-indent">3em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">1em</xsl:attribute>
+</xsl:attribute-set>
+```
+
+###Vlastné elementy
+```
+<!-- zadefinovanie mypara (para bez odsadenia) -->
+<xsl:template match="mypara">   
+  <fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" font-size="12pt" line-height="1.5em">
+    <xsl:apply-templates/>  
+  </fo:block>
+</xsl:template>
+```
+
+###Referencie
+```
+<!-- zmena stylu referencii (kapitola, tabulka, obrazok, podkapitola) -->
+<xsl:param name="local.l10n.xml" select="document('')"/>
+<l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+  <l:l10n language="sk">
+    <l:context name="xref-number-and-title">
+		<l:template name="chapter" text="%n %t"/>
+		<l:template name="table" text="Tabuľka %n - %t"/>
+		<l:template name="figure" text="Obrázok %n - %t"/>
+		<l:template name="sect1" text="%n %t"/>
+    </l:context>    
+  </l:l10n>
+</l:i18n>
+```
+
+##Spôsob prekladu
+
+Pre vygenerovanie PDF je potrebný procesor formátovacích objektov XEP.
+
+Pre preloženie súboru mojabp.xml v zložke docbook_bp zadajte nasledujúci príkaz:
+```
+	...\docbook_bp > pdf_xep.bat mojabp.xml
+```
