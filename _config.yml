@@ -9,7 +9,7 @@ profile_image: /images/profile_image.jpg
 keywords: stanislav, vnencak, blog, portfolio
 description: Moja osobná webová stránka.
 
-github_url: "https://speedo-sp7.github.io/"
+# github_url: "https://speedo-sp7.github.io/"
 
 # Build settings
 markdown: kramdown
