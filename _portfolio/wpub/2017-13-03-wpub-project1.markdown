@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Projekt 1 - Stránka v Jekyll
-date: 2017-13-03T20:04:18-08:00
+date: 2017-13-03 20:04:18 -08:00
 
 category: "Webové publikovanie"
 tag: wpub
