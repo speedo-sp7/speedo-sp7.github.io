@@ -36,23 +36,23 @@ Pre splnenie zadania sme sa rozhodli pretvoriť našu bakalársku prácu na FIIT
 ## Použité elementy
 
 Zoznam a popis elementov použitých v práci:
-* <bookinfo> - zadefinovanie základných informácií o práci
-* <abstract> - súčasť informácií o práci, anotácia, čestné prehlásenie, poďakovanie
-* <mypara> - vytvorený vlastný typ paragrafu bez odsadenia
-* <para> - paragraf s odsadením
-* <gap> - element na pridanie prázdneho riadku
-* <chapter> - kapitola
-* <sect1> - podkapitola
-* <sect2> - podpodkapitola
-* <sect3> - podpodpodkapitola
-* <orderedlist> - čislovaný zoznam
-* <itemizedlist> - zoznam
-* <figure> - obrázok, rovnica
-* <table> -tabuľka
-* <indexterm> - slovo z registra
-* <bibliography> - bibliografia
-* <index> - register pojmov
-* <appendix> - príloha
+* bookinfo - zadefinovanie základných informácií o práci
+* abstract - súčasť informácií o práci, anotácia, čestné prehlásenie, poďakovanie
+* mypara - vytvorený vlastný typ paragrafu bez odsadenia
+* para - paragraf s odsadením
+* gap - element na pridanie prázdneho riadku
+* chapter - kapitola
+* sect1 - podkapitola
+* sect2 - podpodkapitola
+* sect3 - podpodpodkapitola
+* orderedlist - čislovaný zoznam
+* itemizedlist - zoznam
+* figure - obrázok, rovnica
+* table -tabuľka
+* indexterm - slovo z registra
+* bibliography - bibliografia
+* index - register pojmov
+* appendix - príloha
 
 ## Vykonané zmeny
 ### Zmena úvodnej stránky dokumentu
@@ -195,5 +195,5 @@ Pre vygenerovanie PDF je potrebný procesor formátovacích objektov XEP.
 
 Pre preloženie súboru mojabp.xml v zložke docbook_bp zadajte nasledujúci príkaz:
 ```
-	...\docbook_bp > pdf_xep.bat mojabp.xml
+...\docbook_bp > pdf_xep.bat mojabp.xml
 ```
