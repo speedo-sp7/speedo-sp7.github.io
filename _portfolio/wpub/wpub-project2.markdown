@@ -33,7 +33,7 @@ Súčasťou požiadaviek na zadanie je vytvorenie správy o zadaní 2, ktorá bu
 
 Pre splnenie zadania sme sa rozhodli pretvoriť našu bakalársku prácu na FIIT STU do DocBooku.
 
-##Použité elementy
+## Použité elementy
 
 Zoznam a popis elementov použitých v práci:
 * <bookinfo> - zadefinovanie základných informácií o práci
@@ -54,18 +54,22 @@ Zoznam a popis elementov použitých v práci:
 * <index> - register pojmov
 * <appendix> - príloha
 
-##Vykonané zmeny
-###Zmena úvodnej stránky dokumentu
+## Vykonané zmeny
+### Zmena úvodnej stránky dokumentu
+Zmena názvu práce
 ```
-<!-- zmena title prace -->
 <xsl:template name="book.titlepage.before.recto">
 <fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" text-align="center" font-size="18pt" border-bottom-width="0.5pt" border-bottom-style="solid" font-family="sans-serif" text-transform="uppercase">
+```
 
-<!-- zmena veduceho prace -->
+Zmena vedúceho práce
+```
 Vedúci bakalárskej práce:
 <xsl:value-of select="/book/bookinfo/othername[@role='veduci']"/>
+```
 
-<!-- zmena v zalamovani textu -->
+Zmena v zalamovaní textu
+```
 <xsl:template name="book.titlepage.before.recto"><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" text-align="center" font-size="25pt" border-bottom-width="0.5pt" border-bottom-style="solid" font-family="sans-serif" text-transform="uppercase" hyphenate="false">
       <xsl:value-of select="/book/bookinfo//affiliation/orgname"/>
     </fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="6pt" text-align="center" font-size="14pt" font-family="sans-serif">
@@ -78,9 +82,9 @@ Vedúci bakalárskej práce:
 </xsl:template>
 ```
 
-###Kapitoly
+### Kapitoly
+Zmena v pomenovaní kapitol (kapitálkami)
 ```
-<!-- zmena v pomenovani kapitol -->
 <xsl:attribute-set name="chap.label.properties.common">
   <xsl:attribute name="font-size">
     <xsl:value-of select="$body.font.master * 2"/>
@@ -104,6 +108,7 @@ Vedúci bakalárskej práce:
 ```
 
 ###Zmena horizontálneho odsadenia blokov
+Nastavenie odsadení
 ```
 </fo:block><fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" space-before="3pt" space-after="5cm" text-align="center" font-size="12pt" font-family="sans-serif">
       <xsl:value-of select="/book/bookinfo//affiliation/orgdiv[@role='katedra']"/>
@@ -111,13 +116,15 @@ Vedúci bakalárskej práce:
 ```
 
 ###Formátovanie textu
+Nastavenie riadkovania
 ```
-<!-- nastaveie riadkovania -->
 <xsl:attribute-set name="normal.para.spacing">
   <xsl:attribute name="line-height">1.5em</xsl:attribute>
 </xsl:attribute-set>
+```
 
-<!-- zmena typu pisma -->
+Zmena typu písma
+```
 <xsl:param name="body.font.family" select="'Times New Roman'"/>
 <xsl:param name="title.font.family" select="'Times New Roman'"/>
 <xsl:param name="monospace.font.family" select="'monospace'"/>
@@ -125,27 +132,29 @@ Vedúci bakalárskej práce:
 ```
 
 ###Odsadenie textu
+Odsadenie odstavcov
 ```
-<!-- odsadenie odstavcov -->
 <xsl:attribute name="text-indent">1.5em</xsl:attribute>
+```
 
-<!-- zadefinovanie medzery -->
+Zadefinovanie elementu medzery
+```
 <xsl:template match="gap">
   <fo:block space-after="1em"></fo:block>
 </xsl:template>
 ```
 
 ###Zoznamy
+Zmena odsadenia
 ```
-<!-- zmena odsadenia -->
 <xsl:attribute-set name="list.block.spacing">
   <xsl:attribute name="margin-left">15pt</xsl:attribute>
 </xsl:attribute-set>
 ```
 
 ###Odstavce
+Nastavenie rovnakého odsadenia pre všetky odstavce
 ```
-<!-- nastavenie rovnakeho odsadenia pre vsetky odstavce -->
 <xsl:attribute-set name="normal.para.spacing">
   <xsl:attribute name="text-indent">3em</xsl:attribute>
   <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
@@ -155,8 +164,8 @@ Vedúci bakalárskej práce:
 ```
 
 ###Vlastné elementy
+Zadefinovanie elementu mypara (para bez odsadenia)
 ```
-<!-- zadefinovanie mypara (para bez odsadenia) -->
 <xsl:template match="mypara">   
   <fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" font-size="12pt" line-height="1.5em">
     <xsl:apply-templates/>  
@@ -165,8 +174,8 @@ Vedúci bakalárskej práce:
 ```
 
 ###Referencie
+Zmena štýlu referencií (kapitola, tabuľka, obrázok, podkapitola)
 ```
-<!-- zmena stylu referencii (kapitola, tabulka, obrazok, podkapitola) -->
 <xsl:param name="local.l10n.xml" select="document('')"/>
 <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
   <l:l10n language="sk">
