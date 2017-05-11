@@ -205,7 +205,6 @@ Literatúra môže a nemusí byť uvedená na konci xml prezentácie. V prípade
 ```
 <bibliography>
   <title>Literatúra</title>
-
   <source>
     <mixed>WPUB, FIIT STU Bratislava</mixed>
     <href>https://www.fiit.stuba.sk</href>
@@ -256,9 +255,15 @@ Súbor CSS sme vytvorili samostatne a je vložený do elementu head každého vy
 
 V CSS dokumente je zadefinované formátovanie elementov vytvoreného HTML dokumentu (dodáva prezentácii finálny vzhľad).
 
+## Návrh konverzie prezentácie (XSLT) do formátu PDF
+
+Transformáciu prezentácie do formátu PDF sa nám nepodarilo uskutočniť, a preto ju tu neuvádzame.
+
 ## Spôsob prekladu
 
 Pre preloženie súboru presentation.xml umiestneného v tejto zložke zadajte v príkazovom riadku nasledujúci príkaz:
 ```
 ...\generate_presentation.bat presentation.xml
 ```
+
+V prípade, že chcete transformovať iný súbor (prezentáciu), uveďte ju ako vstupný parameter uvedeného skriptu.
