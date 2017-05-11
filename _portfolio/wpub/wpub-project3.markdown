@@ -1,14 +1,5 @@
 ---
 layout: project
-title: Projekt 3
-category: "Webové publikovanie"
-tag: wpub
-
-show_related_projects: yes
----
-
----
-layout: project
 title: Projekt 3 - Prezentácia v XML
 date: 2017-05-11 08:42:45 -08:00
 
