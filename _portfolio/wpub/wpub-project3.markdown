@@ -81,16 +81,16 @@ Tento element predstavuje samotný slide prezentácie.
       <xs:element name="subtitle"       type="xs:string"/>
     </xs:choice>
     <xs:choice    minOccurs="0"         maxOccurs="unbounded">
-      <xs:element name="text"           type="mixedTextType"            minOccurs="0"       maxOccurs="unbounded"/>
+      <xs:element name="text"           type="mixedTextType"        minOccurs="0"       maxOccurs="unbounded"/>
       <xs:element name="list"           type="listType"             minOccurs="0"       maxOccurs="unbounded"/>
     </xs:choice>
     <xs:choice    minOccurs="0"         maxOccurs="1">
       <xs:element name="image"          type="imageType"            minOccurs="1"       maxOccurs="1"/>
     </xs:choice>
   </xs:sequence>
-  <xs:attribute name="id"               type="xs:string"            use="optional"/>
-  <xs:attribute name="showPageNumber"   type="xs:boolean"           use="optional"      default="false"/>
-  <xs:attribute name="slideTemplate"    type="template"             use="required"/>
+  <xs:attribute   name="id"             type="xs:string"            use="optional"/>
+  <xs:attribute   name="showPageNumber" type="xs:boolean"           use="optional"      default="false"/>
+  <xs:attribute   name="slideTemplate"  type="template"             use="required"/>
 </xs:complexType>
 ```
 
@@ -128,9 +128,9 @@ Jeden z elementov obsahu slidu. Predstavuje zoznam, ktorý môže byť čislovan
 ```
 <xs:complexType name="listType">
   <xs:sequence minOccurs="1">
-    <xs:element name="item"             type="xs:string"            minOccurs="1"       maxOccurs="unbounded"/>
+    <xs:element name="item"             type="xs:string"           minOccurs="1"       maxOccurs="unbounded"/>
   </xs:sequence>
-  <xs:attribute name="ordered"          type="xs:boolean"           use="optional"      default="false"/>
+  <xs:attribute name="ordered"          type="xs:boolean"          use="optional"      default="false"/>
   <xs:attribute name="fontSize"         type="fontSize"            use="optional"      default="18"/>
 </xs:complexType>
 ```
