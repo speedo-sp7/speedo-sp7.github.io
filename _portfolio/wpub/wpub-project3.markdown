@@ -266,4 +266,4 @@ Pre preloženie súboru presentation.xml umiestneného v tejto zložke zadajte v
 ...\generate_presentation.bat presentation.xml
 ```
 
-V prípade, že chcete transformovať iný súbor (prezentáciu), uveďte ju ako vstupný parameter uvedeného skriptu.
+V prípade, že chcete transformovať iný vstupný súbor (prezentáciu), uveďte ju ako vstupný parameter uvedeného skriptu.
